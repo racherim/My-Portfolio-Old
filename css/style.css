@@ -176,19 +176,6 @@ p.a {
     }
 }
 
-/* testimonial */
-
-.testimonial-card {
-  background: var(--bs-black);
-  color: var(--bs-white);
-}
-
-.testimonial-card .postd {
-    color: var(--bs-red);
-}
-
-
-
 /* 3.5 FAQs
 /*----------------------------------------------*/
 .accordion-item{
