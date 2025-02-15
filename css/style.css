@@ -47,6 +47,50 @@ body , body  [data-bs-theme=light] {
     --bs-info: #C3C3C3;
 }
 
+input[type="checkbox"] {
+    width: 0;
+    height: 0;
+    visibility: hidden;
+}
+
+label[for="darkmode-toggle"] {
+    width: 100px; /* Adjust the width as needed */
+    height: 45px; /* Adjust the height as needed */
+    position: relative;
+    display: block;
+    background: #ebebeb;
+    border-radius: 25px;
+    box-shadow: inset 0px 5px 15px rgba(0, 0, 0, 0.4), inset 0px -5px 15px rgba(0, 0, 0, 0.4);
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+label[for="darkmode-toggle"]:after {
+    content: "";
+    width: 40px; /* Adjust the width as needed */
+    height: 40px; /* Adjust the height as needed */
+    position: absolute;
+    top: 2.5px; /* Adjust the top position as needed */
+    left: 2.5px; /* Adjust the left position as needed */
+    background: linear-gradient(180deg, #ffcc89, #d8860b);
+    border-radius: 20px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+    transition: left 0.3s;
+}
+
+input:checked + label[for="darkmode-toggle"] {
+    background: #242424;
+}
+
+input:checked + label[for="darkmode-toggle"]:after {
+    left: 55px; /* Adjust the left position as needed */
+    background: linear-gradient(180deg, #777, #3a3a3a);
+}
+
+label[for="darkmode-toggle"]:active::after {
+    width: 30px; /* Adjust the width as needed */
+}
+
 .btn-primary {
     --bs-btn-color: var(--bs-black);
     --bs-btn-bg: var(--bs-orange);
@@ -105,8 +149,27 @@ body , body  [data-bs-theme=light] {
 }
 
 body {
-    font-family: var(--body-font);
+    transition: background-color 0.5s ease, color 0.5s ease;
 }
+
+body.dark-mode {
+    background-color: #121212;
+    color: #ffffff;
+}
+
+body.dark-mode .bg-yellow {
+    background-color: #333333 !important;
+}
+
+body.dark-mode .bg-green {
+    background-color: #444444 !important;
+}
+
+body.dark-mode .bg-teal {
+    background-color: #555555 !important;
+}
+
+/* Add more styles as needed to adjust other elements for dark mode */
 
 /* font size */
 h2,h3,h4,h5,h6 {
