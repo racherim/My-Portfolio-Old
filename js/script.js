@@ -15,28 +15,6 @@
         'wrapAround': true,
         'fitImagesInViewport': true
       })
-      
-      /* swiper */
-      
-
-      var testimonialSwiper = new Swiper(".testimonial-swiper", {
-        spaceBetween: 20,
-        pagination: {
-            el: ".testimonial-swiper-pagination",
-            clickable: true,
-          },
-        breakpoints: {
-          0: {
-            slidesPerView: 1,
-          },
-          800: {
-            slidesPerView: 3,
-          },
-          1400: {
-            slidesPerView: 3,
-          }
-        },
-      });
 
     }); // End of a document ready
 
@@ -76,7 +54,12 @@
     });
   }
 
-
-
+  //darkmode toggle
+  document.addEventListener('DOMContentLoaded', function() {
+      const toggle = document.getElementById('darkmode-toggle');
+      toggle.addEventListener('change', function() {
+          document.body.classList.toggle('dark-mode', toggle.checked);
+      });
+  });
 
 })(jQuery);
